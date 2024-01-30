@@ -1,0 +1,14 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th *ngFor="let data of dataTable">{{ data.letter }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let data of dataTable">{{ data.amount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

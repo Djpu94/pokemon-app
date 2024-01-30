@@ -1,0 +1,26 @@
+/* styles.css */
+
+
+
+  .question-box {
+    background-color: #808080; /* Gris oscuro para el cuadro */
+    color: #ffffff; /* Texto blanco */
+    width: 100%;
+    padding-top: 100%; /* Hace que el contenedor sea un cuadrado, la altura es igual al ancho */
+    font-size: 24px;
+    position: relative;
+    border-radius: 10px; /* Puedes ajustar el valor según tus preferencias */
+    text-align: center;
+  }
+  
+  .question-box::before {
+    content: "?";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .mayus {
+    text-transform: capitalize;
+  }

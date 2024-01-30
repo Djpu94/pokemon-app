@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-center">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Sprite</th>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="
+            let pokemon of pokemonList
+              | pokemonSearch : searchTerm
+              | paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalPokemons}"
+               (click)="onPokemonSelected(pokemon.name)">
+          <td class="mayus text-center align-middle">{{ pokemon.id }}</td>
+          <td class="mayus text-center align-middle"><img src="{{ pokemon.sprites.versions?.['generation-viii']?.icons?.front_default}}" class="img-fluid" alt="..." /></td>
+          <td class="mayus text-center align-middle">{{ pokemon.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <pagination-controls (pageChange)="currentPage = $event;"></pagination-controls>
+</div>

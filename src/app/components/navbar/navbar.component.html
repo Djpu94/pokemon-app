@@ -1,0 +1,21 @@
+<!-- navbar.component.html -->
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="col-9 col-xs-8">
+      <a class="navbar-brand" routerLink="/table">Pokemon APP</a>
+    </div>
+    <div class="col-3 col-xs-4">
+      <form class="d-flex" role="search">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Buscar Pokémon"
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()"
+          name="searchTerm"
+        />
+      </form>
+    </div>
+  </div>
+</nav>

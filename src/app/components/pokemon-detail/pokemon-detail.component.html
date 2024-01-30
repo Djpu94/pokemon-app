@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-center" *ngIf="pokemonData !== null">
+        <div class="card" style="width: 18rem">
+            <img src="{{ pokemonData.sprites.other?.home?.front_default}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 class="card-title">
+                    <p class="mayus text-center">#{{ pokemonData.id }} {{ pokemonData.name }}</p>
+                </h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let ability of pokemonData.abilities; index as i">
+                    <p class="mayus align-middle"><strong>Ability</strong> {{ i }}: {{ ability.ability.name }}</p>
+                </li>
+                <li class="list-group-item" *ngFor="let type of pokemonData.types">
+                    <p class="mayus align-middle"><strong>Type</strong> {{ type.slot }}: {{ type.type.name }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="pokemonData === null">
+        <div class="card" style="width: 18rem">
+            <div class="card-body">
+                <div class="question-box"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p>Porfavor seleccione un pokemon de la lista</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
